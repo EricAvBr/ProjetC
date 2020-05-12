@@ -17,7 +17,7 @@ void Dechiffrement (){}
 void ConvertirAccents(){}
 
 
-void VerifierAlphanumérique(){}
+void VerifierAlphanumerique(){}
 
 
 void main(){}
