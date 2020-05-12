@@ -8,22 +8,40 @@
 //Déchiffre -> Déchiffre le texte avec le code césar.
 
 
-void Chiffrement (){}
+void Chiffrement (char rep[], char chaineChiffree[]){
+  char chaine[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  char chaineMini[26] = "abcdefghijklmnopqrstuvwxyz";
+  int a;
+  for(i=0, i<TAILLE_TABLEAU, i++)
+    if(rep[i]=chaine[a])
+      chaineChiffree[i]=chaine[a+CHIFFREMENT_CLEF];
+    else
+       if(rep[i])=chaineMini[a])
+         rep[i]=chaineMini[a+CHIFFREMENT_CLEF];
+       else
+       a++;
+}
   
   
-void Dechiffrement (){}
+void Dechiffrement (char rep[], char chaineChiffree[]){
+  char chaine[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  char chaineMini[26] = "abcdefghijklmnopqrstuvwxyz";
+  int a;
+  for(i=0, i<TAILLE_TABLEAU, i++)
+    if(chaineChiffree[i]=chaine[a])
+      rep[i]=chaine[a-CHIFFREMENT_CLEF]%26;
+    else
+      if(chaineChiffree[i]=chaineMini[a])
+        rep[i]=chaineMini[a-CHIFFREMENT_CLEF]%26;
+      else
+      a++;
+}
 
 
 void ConvertirAccents(){}
 
 
-void VerifierAlphanumerique(){
-char rep;
-print("quel est votre message?");
-fgets(nom,10,stdin);
-
-
-}
+void VerifierAlphanumerique(){}
 
 
 void main(){}
