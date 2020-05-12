@@ -8,8 +8,16 @@
 //Déchiffre -> Déchiffre le texte avec le code césar.
 
 
-public void Chiffrement (int* clef){}
+void Chiffrement (){}
   
   
-public void Dechiffrement (int* clef){}
+void Dechiffrement (){}
 
+
+void ConvertirAccents(){}
+
+
+void VerifierAlphanumérique(){}
+
+
+void main(){}
