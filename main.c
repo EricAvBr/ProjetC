@@ -12,13 +12,13 @@ void Chiffrement (char rep[], char chaineChiffree[]){
   char chaine[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   char chaineMini[26] = "abcdefghijklmnopqrstuvwxyz";
   int a;
-  for(i=0, i<strlen(reo))
+  for(i=0, i<strlen(rep))
     if(rep[i]=chaine[a])
-      chaineChiffree[i]=chaine[a+CHIFFREMENT_CLEF];
+      chaineChiffree[i]=chaine[a+CHIFFREMENT_CLEF]%26;
       i++;
     else
        if(rep[i])=chaineMini[a])
-         rep[i]=chaineMini[a+CHIFFREMENT_CLEF];
+         rep[i]=chaineMini[a+CHIFFREMENT_CLEF]%26;
          i++;
        else
        a++;
