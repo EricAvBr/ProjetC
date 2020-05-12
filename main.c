@@ -17,7 +17,13 @@ void Dechiffrement (){}
 void ConvertirAccents(){}
 
 
-void VerifierAlphanumerique(){}
+void VerifierAlphanumerique(){
+char rep;
+print("quel est votre message?");
+fgets(nom,10,stdin);
+
+
+}
 
 
 void main(){}
