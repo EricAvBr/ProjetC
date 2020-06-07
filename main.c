@@ -16,7 +16,7 @@ void chiffrementCesar(wchar_t* texte, wchar_t* texteChiffre, int* clef){
 		{
 			if(texte[a]=alphabet[i])
 			{
-				texteChiffre[a]=alphabet[i+clef];
+				texteChiffre[a]=alphabet[i+*clef];
 			}
 		}
 	}	
@@ -31,9 +31,9 @@ void dechiffrementCesar(wchar_t* texte, wchar_t* texteChiffre, int* clef){
 	{
 		for(a=0; a<strlen(alphabet); a++)
 		{
-			if(texte[a]=alphabet[i])
+			if(texteChiffre[a]=alphabet[i])
 			{
-				texte[a]=alphabet[i-clef];
+				texte[a]=alphabet[i-*clef];
 			}
 		}
 	}
@@ -119,8 +119,8 @@ void main(){
 	wprintf(L"---- Le texte converti avec la méthode de chiffrement césar : ----\n");
 	chiffrementCesar(texte, texteChiffre, clef);
 	wprintf(L"%ls\n", texteChiffre);
-	dechiffrementCesar(texte, texteChiffre, clef);
 	wprintf(L"---- Le texte originel : ----\n");
+	dechiffrementCesar(texte, texteChiffre, clef);
 	wprintf(L"%ls\n", texte);
 	viderBuffer();
 }
