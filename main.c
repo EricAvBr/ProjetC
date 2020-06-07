@@ -5,8 +5,7 @@
 #include <string.h>
 
 
-// ---------------------- A FAIRE -----------------------
-void chiffrement(wchar_t* texte, wchar_t* texteChiffre, int* clef){  //A FAIRE
+void chiffrementCesar(wchar_t* texte, wchar_t* texteChiffre, int* clef){  
 	char alphabet[26]= "abcdefghijklmnopqrstuvwxyz";
 	int a;
 	int i;
@@ -17,16 +16,29 @@ void chiffrement(wchar_t* texte, wchar_t* texteChiffre, int* clef){  //A FAIRE
 		{
 			if(texte[a]=alphabet[i])
 			{
-				texteChiffre[a]=alphabet[i+2];
+				texteChiffre[a]=alphabet[i+clef];
 			}
 		}
 	}	
 }
-// ------------------- A FAIRE ------------------------------
-void dechiffrement(){}                                                   
 
+void dechiffrementCesar(wchar_t* texte, wchar_t* texteChiffre, int* clef){                                            
+	char alphabet[26]= "abcdefghijklmnopqrstuvwxyz";
+	int a;
+	int i;
+	texte=texteChiffre;
+	for(i=0; i<wcslen(texteChiffre); i++)
+	{
+		for(a=0; a<strlen(alphabet); a++)
+		{
+			if(texte[a]=alphabet[i])
+			{
+				texte[a]=alphabet[i-clef];
+			}
+		}
+	}
+}
 
-// ------------------- FONCTIONNEL ---------------------------
 void convertirAccents(wchar_t* texte){
 	int i;
 	for(i=0; i<wcslen(texte); i++)
@@ -56,7 +68,6 @@ void convertirAccents(wchar_t* texte){
 	}
 }
 
-// ------------------------ FONCTIONNEL ------------------------
 int verifierAlphanumerique(wchar_t* texte){
 	wchar_t caracAlpha[42]=L"><#({[]})*-+.@|&~_`^?;,:!%$§µ£¤*€=°²\'\\/";
 	int i;
@@ -74,7 +85,6 @@ int verifierAlphanumerique(wchar_t* texte){
 	return 0;
 }
 
-// ------------------ FONCTIONNEL ----------------------
 void viderBuffer(){
 	int c = 0;
 	while (c != '\n' && c != EOF)
@@ -107,8 +117,11 @@ void main(){
 	wprintf(L"---- Le texte converti sans accent : ----\n");
 	wprintf(L"%ls\n", texte);
 	wprintf(L"---- Le texte converti avec la méthode de chiffrement césar : ----\n");
-	chiffrement(texte, texteChiffre, clef);
+	chiffrementCesar(texte, texteChiffre, clef);
 	wprintf(L"%ls\n", texteChiffre);
+	dechiffrementCesar(texte, texteChiffre, clef);
+	wprintf(L"---- Le texte originel : ----\n");
+	wprintf(L"%ls\n", texte);
 	viderBuffer();
 }
 
